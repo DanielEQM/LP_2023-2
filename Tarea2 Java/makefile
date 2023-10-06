@@ -1,23 +1,14 @@
-JFLAGS = -g
+juego:
+	javac -g Juego.java
 
-JC = javac
+pikinims:
+	javac -g Pikinim.java Amarillo.java Cyan.java Magenta.java
 
-JVM = java
+zonas:
+	javac -g Zona.java Ilevantable.java Pieza.java Pildora.java Muralla.java Enemigo.java
 
-MAIN = Juego
-
-JAVAS := $(wildcard *.java)
-
-CLASSES := $(JAVAS:.java=.class)
-
-.PHONY: clean run
-
-%.class: %.java
-	$(JC) $(JFLAGS) $^
-
-
-run: $(CLASSES)
-	$(JVM) $(MAIN)
+run: pikinims zonas juego
+	java Juego
 
 clean:
 	rm -rf *.class
