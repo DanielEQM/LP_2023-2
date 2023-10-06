@@ -40,7 +40,7 @@ public class Pildora extends Zona {
             System.out.println("        pildora, tal vez se la deba dar a alguno de estos...");
             System.out.println("(Escoge el tipo de Pikinim al que se la quieres entregar)");
             System.out.println("[1] >> Amarillo\n[2] >> Magenta\n[3] >> Cyan");
-            System.out.print("Lomiar: Ya me decidi, se la entregare a "); 
+            System.out.print("Lomiar: Ya me decidi, se la entregare a: "); 
             int opt = Juego.scanner.nextInt();
             System.out.print("(Tus pikinim de color "+pikinims[opt-1].getClass().getCanonicalName()+" han aumentado de "+pikinims[opt-1].getCantidad());
             switch(opt){

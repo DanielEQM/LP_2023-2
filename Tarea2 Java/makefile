@@ -1,11 +1,11 @@
 juego:
-	javac -g Juego.java
+	javac Juego.java
 
 pikinims:
-	javac -g Pikinim.java Amarillo.java Cyan.java Magenta.java
+	javac Pikinim.java Amarillo.java Cyan.java Magenta.java
 
 zonas:
-	javac -g Zona.java Ilevantable.java Pieza.java Pildora.java Muralla.java Enemigo.java
+	javac Zona.java Ilevantable.java Pieza.java Pildora.java Muralla.java Enemigo.java
 
 run: pikinims zonas juego
 	java Juego

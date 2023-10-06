@@ -24,10 +24,11 @@ public class Juego{
         Muralla muralla10 = new Muralla(150);
         Zona[] zonas = {pieza0, enemigo1, enemigo2, pildora3, muralla4, pieza5, enemigo6, pieza7, pildora8,enemigo9, muralla10};
         Pikinim[] pikinims = {amarillo, magenta, cyan};
-        System.out.println("Acabas de llegar a un planeta extraño...\nUnas extrañas criaturas de este planeta parece que te van a ayudar...");
+        System.out.println("\nDespues de un gran inconveniente, Lomiar a aterrizado en un planeta desconocido\nUnas extrañas criaturas de este planeta parece que le van a ayudar...");
         while((piezasE != 0) && (turnos != 30) && (cantPikinim != 0)){
             System.out.println("\n >>> ¡Turno "+(turnos + 1)+"! <<<\n");
-            System.out.println("Tienes los siguientes Pikinims:\n__________\nAmarillos >> "+pikinims[0].getCantidad()+"\n Magenta  >> "+pikinims[1].getCantidad()+"\n   Cyan   >> "+pikinims[2].getCantidad()+"\n__________\n");        
+            System.out.println("Tienes los siguientes Pikinims:\n__________\nAmarillos >> "+pikinims[0].getCantidad()+"\n Magenta  >> "+pikinims[1].getCantidad()+"\n   Cyan   >> "+pikinims[2].getCantidad()+"\n___________________");        
+            System.out.println(" >> Piezas encontradas: "+(3-piezasE)+"\n >> Posicion en el mapa: "+pos+"\n___________________\n");
             zonas[pos%11].tipeZone();
             System.out.println("Lomiar: Me pregunto que es lo mejor que puedo hacer...");
             if(pos - 1 == -1){

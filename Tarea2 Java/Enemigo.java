@@ -67,21 +67,15 @@ public class Enemigo extends Zona implements Ilevantable{
             System.out.println("Lomiar: Estas criaturas lograron levantar al enemigo");
             System.out.println("        (Escoge un tipo de Pikinim que quieras que se multiplique)");
             System.out.println("[1] >>> Amarillo\n[2] >>> Magenta\n[3] >>> Cyan");
-            System.out.print("Lomiar: Creo que prefiero que se multipliquen ");
+            System.out.print("Lomiar: Creo que prefiero que se multipliquen: ");
             int opt = Juego.scanner.nextInt();
-            if(opt == 1){
-                System.out.print("(Tus pikinims Amarillos han aumentado de "+pikinims[0].getCantidad()+" a ");
-                pikinims[0].multiplicarse(getPeso());
-                System.out.println(pikinims[0].getCantidad()+")");
-            } else if (opt == 2) {
-                System.out.print("(Tus pikinims Magenta han aumentado de "+pikinims[1].getCantidad()+" a ");
-                pikinims[1].multiplicarse(getPeso());
-                System.out.println(pikinims[1].getCantidad()+")");
-            } else if ( opt == 3) {
-                System.out.print("(Tus pikinims Cyan han aumentado de "+pikinims[2].getCantidad()+" a ");
-                pikinims[2].multiplicarse(getPeso());
-                System.out.println(pikinims[2].getCantidad()+")");
+            System.out.print("(Tus pikinims "+pikinims[opt-1].getClass().getCanonicalName()+" han aumentado de "+pikinims[opt-1].getCantidad()+" a ");
+            switch(opt){
+                case 1: pikinims[0].multiplicarse(getPeso()); break;
+                case 2: pikinims[1].multiplicarse(getPeso()); break;
+                case 3: pikinims[2].multiplicarse(getPeso()); break;
             }
+            System.out.println(pikinims[opt-1].getCantidad()+")");
         }
     }
 

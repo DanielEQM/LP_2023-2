@@ -31,7 +31,8 @@ public class Zona {
          * 
          * return: Nada
          */
-        System.out.println("No queda nada que hacer acá");
+        System.out.println("Lomiar: Estare dando vueltas en circulos...? siento que esta zona ya la");
+        System.out.println("        he visto, supongo que ya pase por acá...\n");
     }
 
     public void tipeZone(){
