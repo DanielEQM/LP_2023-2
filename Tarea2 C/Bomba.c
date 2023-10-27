@@ -117,88 +117,31 @@ void ExplosionX(int fila, int columna){
     if(columna2 == -1){
         columna2 += dimension;
     }
-    if(tipo[fila1][columna1] == 1){
-        if(((Bomba *)tablero[fila1][columna1])->tierra_debajo->vida != 0){
-            ((Bomba *)tablero[fila1][columna1])->tierra_debajo->vida -= 1;
-            if(((Bomba *)tablero[fila1][columna1])->tierra_debajo->vida == 0){
-                ((Bomba *)tablero[fila1][columna1])->tierra_debajo->vida = 0;
-                if(((Bomba *)tablero[fila1][columna1])->tierra_debajo->es_tesoro == 1){
-                    Tesoros--;
+    int filas[2] = {fila1, fila2};
+    int columnas[2] = {columna1, columna2};
+    for(int i = 0; i < 2; i++){
+        for(int j = 0; j < 2; j++){
+            if(tipo[filas[i]][columnas[j]] == 1){
+                if(((Bomba *)tablero[filas[i]][columnas[j]])->tierra_debajo->vida != 0){
+                    ((Bomba *)tablero[filas[i]][columnas[j]])->tierra_debajo->vida -= 1;
+                    if(((Bomba *)tablero[filas[i]][columnas[j]])->tierra_debajo->vida == 0){
+                        ((Bomba *)tablero[filas[i]][columnas[j]])->tierra_debajo->vida = 0;
+                        if(((Bomba *)tablero[filas[i]][columnas[j]])->tierra_debajo->es_tesoro == 1){
+                            Tesoros--;
+                        }
+                    }
                 }
-            }
-        }
-    } else {
-        if(((Tierra *)tablero[fila1][columna1])->vida != 0){
-            ((Tierra *)tablero[fila1][columna1])->vida -= 1;
-            if(((Tierra *)tablero[fila1][columna1])->vida == 0){
-                ((Tierra *)tablero[fila1][columna1])->vida = 0;
-                if(((Tierra *)tablero[fila1][columna1])->es_tesoro == 1){
-                    Tesoros--;
+            } else {
+                if(((Tierra *)tablero[filas[i]][columnas[j]])->vida != 0){
+                    ((Tierra *)tablero[filas[i]][columnas[j]])->vida -= 1;
+                    if(((Tierra *)tablero[filas[i]][columnas[j]])->vida == 0){
+                        ((Tierra *)tablero[filas[i]][columnas[j]])->vida = 0;
+                        if(((Tierra *)tablero[filas[i]][columnas[j]])->es_tesoro == 1){
+                            Tesoros--;
+                        }
+                    }            
                 }
-            }            
-        }
-    }
-    if(tipo[fila2][columna1] == 1){
-        if(((Bomba *)tablero[fila2][columna1])->tierra_debajo->vida != 0){
-            ((Bomba *)tablero[fila2][columna1])->tierra_debajo->vida -= 1;
-            if(((Bomba *)tablero[fila2][columna1])->tierra_debajo->vida == 0){
-                ((Bomba *)tablero[fila2][columna1])->tierra_debajo->vida = 0;
-                if(((Bomba *)tablero[fila2][columna1])->tierra_debajo->es_tesoro == 1){
-                    Tesoros--;
-                }
-            }
-        }
-    } else {
-        if(((Tierra *)tablero[fila2][columna1])->vida != 0){
-            ((Tierra *)tablero[fila2][columna1])->vida -= 1;
-            if(((Tierra *)tablero[fila2][columna1])->vida == 0){
-                ((Tierra *)tablero[fila2][columna1])->vida = 0;
-                if(((Tierra *)tablero[fila2][columna1])->es_tesoro == 1){
-                    Tesoros--;
-                }
-            }            
-        }
-    }
-    if(tipo[fila1][columna2] == 1){
-        if(((Bomba *)tablero[fila1][columna2])->tierra_debajo->vida != 0){
-            ((Bomba *)tablero[fila1][columna2])->tierra_debajo->vida -= 1;
-            if(((Bomba *)tablero[fila1][columna2])->tierra_debajo->vida == 0){
-                ((Bomba *)tablero[fila1][columna2])->tierra_debajo->vida = 0;
-                if(((Bomba *)tablero[fila1][columna2])->tierra_debajo->es_tesoro == 1){
-                    Tesoros--;
-                }
-            }
-        }
-    } else {
-        if(((Tierra *)tablero[fila1][columna2])->vida != 0){
-            ((Tierra *)tablero[fila1][columna2])->vida -= 1;
-            if(((Tierra *)tablero[fila1][columna2])->vida == 0){
-                ((Tierra *)tablero[fila1][columna2])->vida = 0;
-                if(((Tierra *)tablero[fila1][columna2])->es_tesoro == 1){
-                    Tesoros--;
-                }
-            }            
-        }
-    }
-    if(tipo[fila2][columna2] == 1){
-        if(((Bomba *)tablero[fila2][columna2])->tierra_debajo->vida != 0){
-            ((Bomba *)tablero[fila2][columna2])->tierra_debajo->vida -= 1;
-            if(((Bomba *)tablero[fila2][columna2])->tierra_debajo->vida == 0){
-                ((Bomba *)tablero[fila2][columna2])->tierra_debajo->vida = 0;
-                if(((Bomba *)tablero[fila2][columna2])->tierra_debajo->es_tesoro == 1){
-                    Tesoros--;
-                }
-            }
-        }
-    } else {
-        if(((Tierra *)tablero[fila2][columna2])->vida != 0){
-            ((Tierra *)tablero[fila2][columna2])->vida -= 1;
-            if(((Tierra *)tablero[fila2][columna2])->vida == 0){
-                ((Tierra *)tablero[fila2][columna2])->vida = 0;
-                if(((Tierra *)tablero[fila2][columna2])->es_tesoro == 1){
-                    Tesoros--;
-                }
-            }            
+            }    
         }
     }
     BorrarBomba(fila, columna);
